@@ -28,6 +28,8 @@ O que você vai fazer?
 os.execute("chcp 65001")
 os.execute("cls")
 
+local player = require("definitions.player")
+
 
 --header
 --outra forma de usar os strings dentro do print, com varias linha [[]]
@@ -54,6 +56,10 @@ print([[
 
 
 --obter definição do jogador
+--print(string.format("Avida do jogador é no máximo: %d e atual é de: %d", player.maxHealth, 10))
+print(type(player.maxHealth))
+
+
 
 -- obter definição do monstro
 
