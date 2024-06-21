@@ -1,13 +1,12 @@
+local config = require("definitions.config")
+local player = require("definitions.player")
+local colossus = require("definitions.colossus")
+
+
+
 --[[
 
-==============================================================================
-Você empunha uma espada e se prepara para lutar.
-É hora da batalha!
 
-| Priama Colossus
-|
-|Enormes estátuas de prismarine que medem mais de 20 metros de altura. Sua aparência ameaçadora pode assustar até os mais bravos guerreiros
-| Eles tem olhos turquesas brilhantes, mas um eleogio não vai te ajudar muito durante uma batalha.
 |
 | Atributos
 | Vida        ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
@@ -25,11 +24,7 @@ O que você vai fazer?
 
 ]]
 --habilitar utf- 8 
-os.execute("chcp 65001")
-os.execute("cls")
-
-local player = require("definitions.player")
-
+config.utf()
 
 --header
 --outra forma de usar os strings dentro do print, com varias linha [[]]
@@ -52,16 +47,15 @@ print([[
 
 ]])
 
-
-
-
 --obter definição do jogador
---print(string.format("Avida do jogador é no máximo: %d e atual é de: %d", player.maxHealth, 10))
-print(type(player.maxHealth))
-
-
+print(string.format("A vida do jogador é %d/%d", player.maxHealth, player.health))
 
 -- obter definição do monstro
+-- vamos criar um variavel para o boss, que pode receber diferentes monstos, de forma random, assim podemos ter outros desafios aos player
+local boss = colossus
+print(string.format("O valor da vida do %s é de %d/%d",boss.name,boss.health,boss.maxHealth))
+
+
 
 --apresentar o monstro
 
