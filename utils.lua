@@ -73,5 +73,14 @@ end
 
     end
 
+    ---Pergunta ao usuario por um numero e retorna o numero
+    ---@return number
+    function utils.ask()
+        --para escrever na mesma linha e aguardar resposta vamos usar o io.write
+        io.write("> ")     
+        local answer =io.read("*n")   
+        return answer
+    end
+
 
 return utils
