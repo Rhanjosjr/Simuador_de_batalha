@@ -28,14 +28,15 @@ local actions = {}
                 
                 --3. apresentar resutados como print
                 if sucess then
-                    print(string.format("Você atacou a criatura e deu %d pontos de dano",damage))
+                    print(string.format("%s atacou %s e deu %d pontos de dano",playerData.name,creatureData.name, damage))
                     --para aplicar o grafico demonstrando a queda de vida da criatura
                     local healthRate = math.floor((creatureData.health / creatureData.maxHealth)*10)
-                    print(string.format("%s:%s",creatureData.name,utils.getProgressBar(healthRate   )))
+                    
                     --4. aplicar o dano em caso de sucesso  
                     creatureData.health = creatureData.health - damage
+                    print(string.format("%s:%s",creatureData.name,utils.getProgressBar(healthRate   )))
                 else
-                    print("Você tentou atacar, mas errou!")
+                    print(string.format("******%s tentou atacar, mas errou!******",playerData.name))
                 end
                             
             end
@@ -53,9 +54,9 @@ local actions = {}
                 --tirar poção do inventario
                 playerData.potions = playerData.potions-1
                 --retornar os ponto de vida, em um itervalo ate max health
-                local regenPoints =5
+                local regenPoints =10
                 playerData.health=math.min(playerData.maxHealth,playerData.health + regenPoints)
-                print("Você tomou a poção e recuperou pontos de vida.")
+                print(string.format("*****%s tomou a poção e recuperou pontos de vida.*****",playerData.name))
             end
 
 

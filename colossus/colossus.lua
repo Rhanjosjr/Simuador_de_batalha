@@ -6,6 +6,6 @@ local colossus = {}
     colossus.health = 20
     colossus.attack = 5
     colossus.defense = 6
-    colossus.speed = 0
+    colossus.speed = 2
     
 return colossus
