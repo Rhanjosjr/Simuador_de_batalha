@@ -42,9 +42,9 @@ local actions = {}
                             
             end
         }
-        --ataque com sonar
-        local sonarAttack = {
-            description = "Ataque sonar",
+        --ataque com tentaculo
+        local tentacleAttack = {
+            description = "Ataque com tentaculos",
             requirement = nil,
             execute = function(playerData,creatureData)
 
@@ -55,7 +55,7 @@ local actions = {}
                 --3aplica o dano
                 playerData.health = playerData.health - damage
                 --apresenta o resultado
-                print(string.format(" %s usou um sonar e deu %d pontos de dano",creatureData.name,damage))
+                print(string.format(" %s usou um ataque com tentaculo e deu %d pontos de dano",creatureData.name,damage))
                 local healthRate = math.floor((playerData.health / playerData.maxHealth)*10)
                 print(string.format("%s:%s",playerData.name,utils.getProgressBar(healthRate)))  
             end
@@ -83,7 +83,7 @@ local actions = {}
 
         --populate list
         actions.list[#actions.list+1] = bodyAttack
-        actions.list[#actions.list+1] = sonarAttack
+        actions.list[#actions.list+1] = tentacleAttack
         actions.list[#actions.list+1] = waitAttack
         
     end

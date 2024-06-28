@@ -73,6 +73,27 @@ end
 
     end
 
+    ---Realiza print da carta do player escolhido
+    ---@param player any
+    function utils.printPlayer(player)
+        print("-----------------------------------")
+        print("| Atributos")
+        print("|   Vida         "..utils.getProgressBar(player.health))
+        print("|   Ataque       "..utils.getProgressBar(player.attack))
+        print("|   Defesa       "..utils.getProgressBar(player.defense))
+        print("|   Velocidade   "..utils.getProgressBar(player.speed))
+        print("-----------------------------------")
+        print()
+        
+
+
+
+        
+    end
+
+
+
+
     ---Pergunta ao usuario por um numero e retorna o numero
     ---@return number
     function utils.ask()
@@ -81,6 +102,8 @@ end
         local answer =io.read("*n")   
         return answer
     end
+
+
 
 
 return utils

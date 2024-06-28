@@ -10,5 +10,7 @@ local player = {}
 
     player.potions=3
 
+    player.numberPlay = "player.player"
+
 
 return player

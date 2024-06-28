@@ -7,5 +7,7 @@ local colossus = {}
     colossus.attack = 5
     colossus.defense = 6
     colossus.speed = 2
+
+    colossus.numberBoss = "colossus.colossus"
     
 return colossus
